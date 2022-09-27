@@ -97,16 +97,6 @@ export default function SpecialistsSection() {
         number: '+86 18717806931',
         viber: null
       },
-      {
-        picture: Botakoz,
-        name: 'Ботакоз',
-        reg: 'Шанхай',
-        block1: '6 лет в Китае.',
-        block2: 'Международная экономика и торговля.',
-        block3: 'Специализация: маркетинг WeChat, китайские социальные сети, создание контента, офлайн-маркетинг. Анализ рынка, стратегия локализации в F&B, Подбор персонала, интерпретация. Формирование сообщества студентов и молодых специалистов.',
-        quote: null,
-        wechat: '13710743034'
-      },
     ]
   ]
 
@@ -124,25 +114,17 @@ export default function SpecialistsSection() {
         {
           innerWidth <= 900
             ?
-            <Swiper
-              spaceBetween={24}
-              slidesPerView={1}
-              navigation={true}
-              modules={[Navigation]}
-              className="mySwiper"
-            >
+            <div className={cl.Slides_mobile_container}>
               {
                 sections.map(section =>
                   section.map(person =>
-                    <SwiperSlide key={person.name}>
-                      <div className={`${cl.Slide_container} ${cl.Mobile}`}>
-                        <Person person={person} defaultActive/>
-                      </div>
-                    </SwiperSlide>
+                    <div className={`${cl.Slide_container} ${cl.Mobile}`} key={person.name}>
+                      <Person person={person} defaultActive/>
+                    </div>
                   )
                 )
               }
-            </Swiper>
+            </div>
             :
             sections.map((section, index) =>
               <div className={cl.Slide_container} key={index}>
