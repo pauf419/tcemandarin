@@ -149,7 +149,7 @@ export default function News() {
               <div className={cl.Newletter_list}>
                 {
                   normalizedNews.map((newsletter, index) =>
-                    <div onClick={() => navigate(`/news/${newsletter._id}`)} key={newsletter._id}  className={cl.Newletter_container} style={{backgroundImage: newsletter.background ? `url(${newsletter.background})` : 'linear-gradient(67deg, #ff9500, #ff6801)', backgroundPosition: 'center center', backgroundSize: 'cover', height: (innerHeight/2)}}>
+                    <div onClick={() => navigate(`/news/${newsletter._id}`)} key={newsletter._id}  className={cl.Newletter_container} style={{backgroundImage: newsletter.background ? `url(${newsletter.background})` : 'linear-gradient(67deg, #ff9500, #ff6801)', backgroundPosition: 'center center', backgroundSize: 'cover', minHeight: (innerHeight/2)}}>
                       {
                         newsletter.background &&
                         <div className={cl.Newletter_blurer}></div>
@@ -162,9 +162,9 @@ export default function News() {
                           <h4> {newsletter.header} </h4>
                         </div>
                         {
-                          newsletter.description &&
+                          newsletter.short_description &&
                             <div className={cl.Newletter_description}>
-                              {newsletter.description}
+                              {newsletter.short_description}
                             </div>
                         }
                       </div>
