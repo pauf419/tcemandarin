@@ -1,0 +1,27 @@
+@import '../../../styles/variables.sass'
+
+.Btn
+  width: auto
+  border: 0
+  padding: 10px 20px
+  background: $fg-3
+  border-radius: 50px
+  color: #fff
+  font-family: $font-mnts
+  font-size: 15px
+  cursor: pointer
+  transition: 0.2s all ease
+
+  &.Rounded
+    background: transparent
+    border: 2px solid $fg-3
+    color: $color
+
+    &:hover
+      background: $fg-3
+      color: #fff
+
+  &.Filled
+
+    &:hover
+      background: $fg-3-light

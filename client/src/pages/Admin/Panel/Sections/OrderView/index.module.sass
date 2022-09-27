@@ -1,0 +1,140 @@
+@import '../../../../../styles/variables.sass'
+
+.OrdersPage_container
+  padding: $p_d
+  min-height: calc(100vh - 71px - ($p_d * 2) - 1px)
+
+  .Empty_container
+    display: grid
+    justify-content: center
+    align-items: center
+    justify-items: center
+    align-content: center
+
+    span
+      font-size: 12px
+
+    svg
+      fill: #fff
+      width: 54px
+      height: 54px
+
+  .OrderType_select
+    padding-bottom: $p_d
+    display: flex
+    justify-content: center
+    align-items: center
+    gap: .2rem
+
+    .Text
+      font-size: 12px
+
+    .Selector
+      display: flex
+      align-items: center
+      gap: .5rem
+
+      .Selector_chose
+        transition: .2s all ease
+        cursor: pointer
+
+        &.Active
+          color: $fg-3
+
+        &:hover
+          color: $fg-3
+
+      .Chose_iterlayer
+
+  .OrderList_container
+    display: grid
+    grid-gap: 1rem
+
+    .Order_container
+      transition: .2s all ease
+      padding: 1rem
+      border: 2px solid rgba(73, 76, 80, 0.4)
+      border-radius: 16px
+      display: grid
+
+      .Order_header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: .5rem
+
+        .Name
+
+        .Date
+          text-align: end
+          color: $color
+          font-size: 10px
+
+      .Order_content
+        display: grid
+        grid-gap: 0
+        height: 0px
+        opacity: 0
+        transition: .2s all ease
+        font-size: 0px
+        box-sizing: border-box
+
+        .Options
+
+          display: none
+          grid-template-columns: auto auto
+          grid-gap: 1rem
+
+      &:hover
+        border-color: $fg-3
+
+        .Order_content
+          opacity: 1
+          padding-top: 1rem
+          height: 100%
+          font-size: 12px
+          grid-gap: .5rem
+
+          .Options
+            display: grid
+
+@media(min-width: 2000px)
+  .OrdersPage_container
+
+    .OrderList_container
+
+      .Order_container
+        padding: $p_d
+
+        .Order_header
+          font-size: 30px
+
+        .Order_content
+
+          &:hover
+            font-size: 25px
+
+          .Options
+
+@media(max-width: 900px)
+  .OrdersPage_container
+    .OrderList_container
+
+      .Order_container
+        padding: .5rem
+
+    .OrderType_select
+      .Text
+        font-size: 10px
+
+      .Selector
+        font-size: 13px
+
+@media(max-width: 400px)
+  .OrdersPage_container
+    .OrderType_select
+      .Text
+        font-size: 8px
+
+      .Selector
+        font-size: 8px

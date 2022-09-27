@@ -1,0 +1,580 @@
+@import '../../styles/variables.sass'
+
+section
+  min-height: 100vh
+  position: relative
+
+  .Section_header
+    display: grid
+    grid-gap: 2rem
+    padding: 3rem 3rem 0 3rem
+
+    .Header_afterline
+      font-size: 20px
+      display: grid
+      grid-gap: .5rem
+
+  &.Welcome
+    display: flex
+    justify-content: center
+    align-items: center
+    background: url('../../img/bg1.jpg')
+    background-size: cover
+    background-position: center center
+
+    .Greeting
+      z-index: 3
+      display: grid
+      padding: 0 $p-d 0 $p-d
+      max-width: 50%
+      grid-gap: 1rem
+      justify-items: start
+
+      div span
+        font-size: 19px
+
+  &.News
+    background-color: #000
+
+    .News_content
+      padding: $p_d
+
+      .News_inner
+
+        .Newletter_list
+          display: flex
+          gap: 1rem
+
+        .Controlls
+          display: flex
+          justify-content: center
+          padding: 2rem
+
+    .Newletter_container
+      cursor: pointer
+      position: relative
+      width: 100%
+      display: grid
+      align-items: end
+      border-radius: 16px
+      padding: 1rem
+
+      .Newletter_content
+        display: grid
+        grid-gap: 1rem
+
+      &:hover
+        .Newletter_infoheader
+          transform: scale(1.1)
+
+        .Newletter_blurer
+          backdrop-filter: blur(4px)
+
+      .Newletter_infoheader
+        transition: .2s all ease
+        position: absolute
+        top: 0
+        right: 0
+        padding: 1rem
+        font-size: 10px
+
+      .Newletter_blurer
+        position: absolute
+        background: rgba(0,0,0, .6)
+        width: 100%
+        height: 100%
+        border-radius: 14px
+        transition: .2s all ease
+
+      .Newletter_header
+        font-size: 22px
+
+  &.WhyUs
+    background: #000
+
+    .Section_header
+      padding: $p_d
+
+    .WhyUs_content
+      display: grid
+      grid-gap: $p_d
+      padding: 0 $p_d $p_d $p_d
+
+      .WhyUs_perks__header
+        display: flex
+        gap: 1rem
+
+        .Perk
+          display: grid
+          align-content: space-between
+          grid-gap: .5rem
+          width: 100%
+
+          .Perk_content
+            display: grid
+            grid-gap: .5rem
+            justify-items: center
+
+            .Perk_header
+              display: grid
+              justify-items: center
+
+              .Perk_svg
+                fill: $fg-3
+                width: 100px
+                height: 100px
+
+              .Header
+                text-align: center
+                font-size: 18px
+
+            .Short_description
+              text-align: center
+
+            .Separator
+              width: 50px
+              height: 2px
+              background-color: $fg-3
+              transition: .2s all ease
+
+              &.Active
+                width: 75px
+
+          .Perk_caret
+            display: flex
+            justify-content: center
+            cursor: pointer
+            background: transparent
+            border: none
+            outline: none
+
+            &:hover
+              svg
+                fill: $fg-3
+
+            &.Active
+              svg
+                transform: rotateZ(180deg)
+                fill: $fg-3
+
+            svg
+              transition: .2s all ease
+              display: block
+              fill: rgba(73, 76, 80, 0.4)
+              width: 50px
+              height: 50px
+
+      .WhyUs_CurrPerk
+        display: grid
+        grid-gap: 1rem
+
+        .CurrPerk_header
+
+        .CurrPerk_separator
+          width: 100px
+          height: 2px
+          background-color: $fg-3
+
+        .CurrPerk_description
+          display: grid
+          grid-gap: .8rem
+
+          .Description_block
+            display: grid
+            justify-items: start
+            grid-gap: .5rem
+
+            .Price
+              display: flex
+              gap: .3rem
+              font-style: italic
+
+              .Price_block
+                background: $fg-3
+                padding: .1rem .3rem
+                border-radius: 6px
+
+  &.Interlayer
+    display: grid
+    background: url('../../img/bg2.jpg')
+    background-size: cover
+    background-position: center center
+    min-height: 130vh
+
+    &.Interlayer2
+      text-align: end
+      background: url('../../img/bg4.jpg')
+      background-size: cover
+      background-position: center center
+
+      .Content
+        justify-items: flex-end
+
+        .Header
+          font-size: 30px
+
+    .Content
+      display: grid
+      align-content: center
+      justify-items: flex-start
+      grid-gap: 1rem
+      padding: 6rem $p-d 6rem $p-d
+
+      .Header
+        font-size: 30px
+
+      .ColoredTxt
+        color: $fg-3
+        font-size: 30px
+
+  &.Specialists
+    background-color: #000
+
+    .Swiper_container
+      padding: $p-d
+      display: grid
+      grid-gap: 1.5rem
+
+      .Slide_container
+        display: flex
+        gap: 1.5rem
+
+        &.Mobile
+          grid-template-columns: auto
+
+        .Person
+          width: 100%
+          display: grid
+          align-content: space-between
+
+          &:hover
+            .About .Details .Hr
+              width: 125px
+
+          .Picture_inner
+
+            .Picture
+              flex: 0 1 30%
+              border-radius: 50%
+              height: 0
+              padding-top: 100%
+              position: relative
+
+          .About
+            display: grid
+            align-content: space-between
+
+            .Details
+              display: grid
+              grid-gap: 1.5rem
+              padding-top: 1.5rem
+
+              .Hr
+                transition: .2s all ease
+                width: 100px
+                border-top: 2px solid $fg-3
+
+              .PersonDetails
+                display: grid
+                grid-gap: 1.5rem
+
+              .Visible_block
+                display: grid
+                grid-gap: 1.5rem
+                opacity: 0
+                height: 0px
+                transition: .2s all ease
+
+                &.Active
+                  opacity: 1
+                  height: auto
+
+                .Block4
+                  display: grid
+                  grid-gap: 1.5rem
+
+                  .Quote
+                    font-style: italic
+
+                    .Quote_bracket
+                      color: $fg-3
+
+            .Soc_container
+              display: grid
+              gap: .2rem
+              .Soc
+                display: flex
+                align-items: center
+                gap: 0.5rem
+                font-size: 12px
+
+                svg
+                  fill: #fff
+                  display: block
+                  width: 18px
+                  height: 18px
+
+  &.Etaps
+    background-color: #000
+
+    .Etaps_header
+      padding: $p-d $p-d 0 $p-d
+
+    .Content
+      display: grid
+      grid-template-columns: 50% 50%
+      grid-gap: 1.5rem
+      row-gap: 3.2rem
+      padding: $p-d
+
+      .Etap
+        position: relative
+        padding: 1.5rem
+        border: 2px solid $fg-3
+        border-radius: 16px
+
+        .Etap_content
+          display: grid
+          grid-gap: .8rem
+
+          .Title
+            font-size: 16px
+
+          .Icon
+            position: absolute
+            top: calc(-86px / 2)
+            margin-right: 1rem
+            background-color: #000
+            right: 0
+            width: 50px
+            height: 50px
+            border: 2px solid $fg-3
+            border-radius: 50%
+            display: flex
+            justify-content: center
+            align-items: center
+            padding: 1rem
+
+            svg
+              fill: $fg-3
+              width: 100%
+              height: 100%
+
+  &.Ask
+    min-height: 130vh
+    background-image: url('../../img/bg3.jpg')
+    background-size: cover
+    background-position: center center
+    display: grid
+    align-content: center
+
+    .Content
+      .Form
+        display: grid
+        justify-content: center
+
+        .Form_header
+          display: grid
+          grid-gap: .5rem
+          text-align: center
+          padding: 5rem 1.5rem 1.5rem 1.5rem
+          font-size: 22px
+          justify-items: end
+          justify-content: center
+
+          .Hr
+            width: 100px
+            height: 2px
+            background: $fg-3
+
+        .Form_content
+          padding: 1.5rem
+          display: grid
+          grid-gap: .5rem
+
+          .Btn_container
+            display: flex
+            justify-content: flex-start
+
+            button
+              margin-top: 0.5rem
+
+  .Next_container
+    .Next_content
+      padding: 0 $p_d $p_d $p_d
+      display: grid
+      grid-template-columns: auto auto auto
+
+      .Block
+        display: grid
+        grid-gap: 1rem
+
+        .Details
+          display: grid
+          grid-gap: .5rem
+
+          .Title
+            font-weight: bold
+
+        .Icon
+          fill: $fg-3
+          width: 100px
+          height: 100px
+
+  .End_container
+    padding: 0 $p_d $p_d $p_d
+
+@media(min-width: 2000px)
+  section
+    .Section_header
+      padding: 6rem 25rem 6rem 25rem
+      span
+        h2
+          font-size: 60px
+
+    &.Interlayer
+      .Content
+        padding: 6rem 25rem 6rem 25rem
+
+        div h1
+          font-size: 60px
+
+        div span
+          font-size: 45px
+    &.WhyUs
+      .Section_header
+        padding: 6rem 25rem 6rem 25rem
+      .WhyUs_content
+        min-height: 80vh
+        align-content: center
+        padding: 0 25rem 6rem 25rem
+
+    &.News
+      .News_content
+        padding: 0 25rem 6rem 25rem
+
+    &.Specialists
+      .Swiper_container
+        padding: 0 25rem 6rem 25rem
+
+@media(max-width: 900px)
+  section
+    &.Specialists
+      .Swiper_container
+        display: block
+        position: relative
+    &.News
+      .News_content
+
+        .Newletter_list
+          display: grid
+          width: auto!important
+
+      .Newletter_container
+        width: auto!important
+
+    &.WhyUs
+
+      .WhyUs_content
+        .WhyUs_perks__header
+          display: grid
+          grid-gap: 3rem
+
+
+        .WhyUs_CurrPerk
+          padding: 6rem 0
+
+          .CurrPerk_description
+            .Description_block
+              .Price
+                display: block
+                .Price_block
+                  background: transparent
+
+@media(max-width: 600px)
+  section
+    &.Welcome
+      display: grid
+      align-content: center
+      grid-gap: $p-d
+      width: 100%
+
+    &.Specialists
+
+      .Gendir_container
+        display: grid
+        grid-template-columns: auto
+
+        .Picture
+          min-height: 80vw
+
+      .Swiper_container
+        display: block
+
+        .Slide_container
+
+          .Person
+
+            .About
+
+              .Details
+                .PersonDetails
+
+                .Visible_block
+
+                  .Block4
+
+    &.Etaps
+      .Etaps_header
+      .Content
+        display: grid
+        grid-template-columns: auto
+        grid-gap: 3.2rem
+
+        .Etap
+          padding-top: $p-d
+
+    .Next_container
+      .Next_content
+        grid-gap: 1.5rem
+        grid-template-columns: auto
+
+
+    &.Interlayer
+      .Content
+        .Header
+          h1
+            font-size: 20px
+      &.Interlayer2
+        .Content
+          .Header
+            font-size: 20px
+
+    &.Services
+      .Services_cards
+        display: grid
+        grid-template-columns: auto
+        grid-template-rows: auto
+        column-gap: $p-d
+        row-gap: $p-d
+
+@media(max-width: 320px)
+  section
+    &.Welcome
+      .Greeting
+        padding: 0 1rem 0 1rem
+
+      .Roadmap
+        padding: 0 1rem 0 1rem
+
+    &.Interlayer
+
+      .Content
+        .Header
+          h1
+            font-size: 19px
+
+    &.WhyUs
+      .WhyUs_header
+        span
+          font-size: 16px

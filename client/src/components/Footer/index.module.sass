@@ -1,0 +1,88 @@
+@import '../../styles/variables.sass'
+
+.Footer
+  background: #000
+  padding: 1.5rem
+  display: grid
+  grid-gap: .5rem
+
+  .Footer_inner
+    display: flex
+    align-items: center
+    justify-content: space-around
+
+    .Logo_section
+      font-size: 13px
+      display: flex
+      gap: 1rem
+      align-items: center
+
+    .Promo_section
+      display: grid
+      grid-template-columns: auto auto
+      grid-gap: 1rem
+
+      .Social_section
+        display: grid
+        grid-template-columns: auto auto auto
+        grid-gap: 1rem
+        align-items: center
+
+        .Block
+
+          &:hover
+            .Icon
+              svg
+                fill: $fg-3
+
+          .Icon
+            svg
+              display: block
+              fill: #fff
+              transition: .2s all ease
+
+  .Footer_privacy
+    display: flex
+    align-items: center
+    justify-content: space-around
+    font-size: 11px
+
+    .PrivacyPolicy
+      a
+        color: #fff
+
+
+
+
+@media(max-width: 600px)
+  .Footer
+    display: grid
+    grid-gap: 2rem
+
+    .Footer_inner
+      display: grid
+      align-items: center
+      gap: 3rem
+
+      .Logo_section
+        display: grid
+        align-items: center
+        justify-content: center
+        justify-items: center
+
+      .Promo_section
+        display: grid
+        grid-template-columns: auto
+        justify-content: center
+        grid-gap: 2rem
+
+        .Social_section
+          display: grid
+          grid-template-columns: auto auto auto
+          justify-content: center
+
+    .Footer_privacy
+      display: grid
+      justify-items: center
+      font-size: 11px
+      grid-gap: 1.5rem

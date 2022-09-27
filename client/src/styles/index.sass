@@ -1,0 +1,269 @@
+@import './variables.sass'
+
+*
+  margin: 0
+  padding: 0
+  font-family: $font-mnts
+  z-index: 3
+
+  &::selection
+    color: #fff
+    background: $fg-3-light
+    opacity: 0.2
+
+html
+  scroll-behavior: smooth
+
+body
+  background-color: $bg
+  color: $color
+
+  &::-webkit-scrollbar
+    width: 3px
+
+  &::-webkit-scrollbar-track
+    background: #000
+
+  &::-webkit-scrollbar-thumb
+    background: $fg-3
+    border-radius: 10px
+
+.arrow
+  border: solid rgba(73, 76, 80, 0.4)
+  border-width: 0 2px 2px 0
+  display: inline-block
+  padding: 8px
+  transition: .2s all ease
+  cursor: pointer
+
+  &:hover
+    border-color: $fg-3
+
+.right
+  transform: rotate(-45deg)
+  -webkit-transform: rotate(-45deg)
+
+.left
+  transform: rotate(135deg)
+  -webkit-transform: rotate(135deg)
+
+
+.swiper-button-next, .swiper-button-prev
+  color: $fg-3
+  opacity: 0.2
+  transition: .2s all ease
+
+  &:hover
+    opacity: 1
+
+  &.swiper-button-disabled
+    opacity: 0
+
+.swiper
+  position: initial!important
+
+.swiper-pagination
+
+  .swiper-pagination-bullet
+    background: $fg-3
+
+.co-color
+  color: $fg-3
+
+.logo
+  transition: .2s all ease
+  display: block
+
+  &.medium
+    width: 55px
+    height: 55px
+
+  &.small
+    width: 45px
+    height: 45px
+
+.font-medium
+  font-size: 22px
+
+.colored
+  color: $fg-3
+
+.logo-font
+  display: flex
+  font-weight: bold
+  font-size: 34px
+
+  .logo-2
+    color: $fg-3
+
+.blurer
+  position: absolute
+  width: 100%
+  height: 100%
+  background: rgba(0,0,0, .7)
+  z-index: 2
+
+.loading-blurer
+  transition: .2s all ease
+  display: flex
+  align-items: center
+  justify-content: center
+  position: fixed
+  width: 100%
+  height: 100%
+  background: rgba(0,0,0, .8)
+  z-index: 999
+
+  span
+    width: 74px
+    position: relative
+
+    .spiner
+      position: absolute
+      width: 74px
+      border-left: 2px solid $fg-3
+      height: 74px
+      border-radius: 50%
+      left: -6px
+      top: -5px
+      animation: rotate 1s infinite linear
+
+    .logo-container
+      flex: 0 1 30%
+      border-radius: 50%
+      height: 0
+      position: relative
+      width: 70px
+      height: 70px
+
+      img
+        width: 64px
+        height: 64px
+        display: block
+
+.phone_promo
+  display: flex
+  align-items: center
+  gap: .5rem
+
+  .svg
+    svg
+      fill: #fff
+      display: block
+
+  .content
+    display: flex
+    gap: .5rem
+
+    .intersector
+      width: 2px
+      background: $fg-3
+
+    .numbers
+      font-style: italic
+      display: grid
+      grid-gap: .5rem
+
+.tooltip_inner
+  position: relative
+
+  .tooltip_text
+    visibility: hidden
+    min-width: 120px
+    padding-left: .5rem
+    background-color: $fg-3
+    color: #fff
+    text-align: center
+    border-radius: 6px
+    padding: 5px
+    position: absolute
+    z-index: 1
+    bottom: 140%
+    left: calc(50% - .5rem)
+    margin-left: -60px
+    opacity: 0
+    transition: opacity 0.3s
+
+    &:after
+      content: ""
+      position: absolute
+      top: 100%
+      left: 50%
+      margin-left: -5px
+      border-width: 5px
+      border-style: solid
+      border-color: $fg-3 transparent transparent transparent
+
+  &:hover
+    .tooltip_text
+      visibility: visible
+      opacity: 1
+
+#toast-container
+  padding: .5rem
+  display: grid
+  grid-gap: .5rem
+  position: fixed
+  bottom: 0
+
+  .toast
+    padding: 1rem
+    background: rgba(0, 0, 0, .5)
+    backdrop-filter: blur(4px)
+    border-radius: 16px
+    border: 2px solid $fg-3
+
+.transparent-txtarea
+  background: transparent
+  border: none
+  outline: none
+  resize: vertical
+  width: 100%
+  color: $color
+  font-size: 32px
+  min-height: 78px
+
+  &.font_normal
+    font-size: 22px
+
+@keyframes rotate
+  0%
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+
+  100%
+    -webkit-transform: rotate(359deg)
+    transform: rotate(359deg)
+
+.News_container
+  display: grid
+  grid-gap: 1rem
+
+  &.active
+    justify-content: center
+    align-items: center
+
+.lds-dual-ring
+  display: inline-block
+  width: 80px
+  height: 80px
+
+.lds-dual-ring:after
+  content: " "
+  display: block
+  width: 16px
+  height: 16px
+  margin: 8px
+  border-radius: 50%
+  border: 2px solid #fff
+  border-color: #fff #fff transparent transparent
+  animation: lds-dual-ring 1s infinite linear
+
+@keyframes lds-dual-ring
+  0%
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+
+  100%
+    -webkit-transform: rotate(359deg)
+    transform: rotate(359deg)

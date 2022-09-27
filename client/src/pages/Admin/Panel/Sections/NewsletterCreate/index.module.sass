@@ -1,0 +1,31 @@
+@import '../../../../../styles/variables.sass'
+
+.NewsletterCreate_container
+  padding: $p_d
+  display: grid
+  grid-gap: 2rem
+
+  .Section
+    display: grid
+    grid-gap: .5rem
+    color: #757575
+    font-size: 12px
+
+    .Status
+      color: #47cf73
+
+      &.Required
+        color: #FF5A5F
+
+
+    .Description
+      display: flex
+      gap: 5px
+
+    .Status_afterline
+      font-style: italic
+      text-decoration: underline
+      text-decoration-color:  #47cf73
+
+      &.Required
+        text-decoration-color: #FF5A5F

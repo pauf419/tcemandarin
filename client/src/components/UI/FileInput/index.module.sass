@@ -1,0 +1,51 @@
+@import '../../../styles/variables.sass'
+
+.ImageInput
+  display: grid
+
+  input
+    display: none
+
+  label
+    cursor: pointer
+    display: grid
+    color: #FFF
+    background: #000
+    font-size: 115%
+    border: 2px dashed $fg-3
+    border-radius: 16px
+
+    &:hover
+
+      .ImagePreview
+        span
+          svg
+            fill: $fg-3
+
+    .ImagePreview
+      position: relative
+      padding: 12rem 6rem
+      display: grid
+      justify-items: center
+      border-radius: 18px
+
+      span
+        svg
+          transition: .2s all ease
+          fill: $color
+          display: block
+          width: 34px
+          height: 34px
+
+
+@keyframes shake
+  0%
+    transform: rotate(0deg)
+  25%
+    transform: rotate(10deg)
+  50%
+    transform: rotate(0deg)
+  75%
+    transform: rotate(-10deg)
+  100%
+    transform: rotate(0deg)

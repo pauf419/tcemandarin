@@ -1,0 +1,45 @@
+@import '../../../styles/variables.sass'
+
+.AdminAuth_container
+  min-height: 100vh
+  display: grid
+  grid-template-columns: 40% 60%
+
+  .AdminAuth_section__content
+    padding: $p_d
+    display: grid
+    grid-gap: $p_d
+    align-items: center
+    align-content: center
+
+    .Section_header
+
+    .Section_action
+      box-sizing: border-box
+      display: grid
+      width: 100%
+      grid-gap: 1rem
+      justify-items: start
+
+
+  .AdminAuth_section__promo
+    position: relative
+    display: grid
+    padding: 1rem
+    align-items: center
+    justify-items: center
+    background-size: cover
+    background-image: url('https://images.pexels.com/photos/39284/macbook-apple-imac-computer-39284.jpeg')
+    background-position: center center
+
+
+@media(min-width: 2000px)
+  .AdminAuth_container
+    grid-template-columns: 30% 70%
+
+@media(max-width: 900px)
+  .AdminAuth_container
+    grid-template-columns: auto
+
+    .AdminAuth_section__promo
+      display: none

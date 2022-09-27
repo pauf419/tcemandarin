@@ -1,0 +1,181 @@
+@import '../../styles/variables.sass'
+
+.Navbar_container
+  position: fixed
+  width: 100%
+  z-index: 4
+  transition: 0.2s all ease
+
+  &.Admin
+
+
+    .Navbar_container
+    .Navbar
+      border-bottom: 1px solid rgba(73, 76, 80, 0.4)
+
+      .Logo_inner
+        display: flex
+        align-items: center
+        margin-right: auto
+        gap: .5rem
+
+        .Status
+          font-family: inherit
+          font-size: 10px
+          border-radius: 3px
+          padding: 1px 2px
+          background: transparent
+          border: 1px solid #ffe812
+          color: #ffe812
+
+  &.Active
+    background: rgba(0,0,0, .5)
+    backdrop-filter: blur(4px)
+
+  .Navbar
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: .5rem 1.3rem .5rem .5rem
+    gap: 1rem
+
+    .Navbar_section
+      display: grid
+      grid-template-columns: auto auto
+      justify-items: end
+      align-items: center
+      width: 100%
+
+      .Hamburger_btn
+        z-index: 0
+        position: relative
+        grid-gap: .3rem
+        cursor: pointer
+
+        &.Break
+          .Hamburger_line
+            transition: .2s all ease
+            width: 15px
+            border-top: 1px solid #fff
+
+          .Line_1
+            transform: rotateZ(34deg) translateY(-1px)
+          .Line_2
+            transform: rotateZ(-34deg) translateY(1px)
+
+          &:hover
+            .Hamburger_line
+              transition: .2s all ease
+              width: 25px
+              border-top: 1px solid #fff
+            .Line_1
+              transform: rotateZ(45deg) translateY(4px)
+            .Line_2
+              transform: rotateZ(-45deg) translateY(-4px)
+
+        .Hamburger_line
+          transition: .2s all ease
+          width: 25px
+          border-top: 1px solid #fff
+
+      .Navbar_navigator_container
+
+        .Navigator_inner
+          display: flex
+          align-items: center
+          gap: 1rem
+
+          .Navigator_header
+            display: none
+
+          .Separator
+            display: none
+
+          .Content
+            display: flex
+            align-items: center
+            gap: 1rem
+
+            a
+              display: flex
+              align-items: center
+              min-height: 50px
+              transition: .2s all ease
+              cursor: pointer
+              color: $color
+              font-style: normal
+              text-decoration: none
+
+              &:hover
+                color: $fg-3
+
+            .Soc_promo
+              display: flex
+              grid-gap: .5rem
+
+@media(max-width: 900px)
+  .Navbar_container
+    &.Admin
+      .Navbar
+        .Navbar_section
+          .Navbar_navigator_container
+            .Navigator_inner
+              background: $bg
+
+    .Navbar
+
+
+      .Navbar_section
+
+        .Hamburger_btn
+          display: grid
+
+          .Hamburger_line
+
+        .Navbar_navigator_container
+          background: rgba(0,0,0, .5)
+          backdrop-filter: blur(9px)
+          width: 100%
+          transition: .3s all ease
+          position: fixed
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          transform: translatex(100%)
+          height: 100vh
+          display: grid
+          align-content: space-between
+
+          .Navigator_inner
+            padding: 1.5rem
+            display: grid!important
+
+            .Navigator_header
+              display: flex!important
+              justify-content: space-between
+              align-items: center
+
+              .Logo
+                display: flex
+                align-items: center
+                gap: .5rem
+
+              .Break
+                width: 25px
+                height: 25px
+                display: grid
+                align-content: center
+
+            .Separator
+              display: block!important
+              width: 100%
+              border-top: 1px solid rgba(#494c50,  .4)
+
+            .Content
+              padding-top: 1rem
+              display: grid!important
+              justify-items: start
+
+          &.Active
+            transform: translateX(0)

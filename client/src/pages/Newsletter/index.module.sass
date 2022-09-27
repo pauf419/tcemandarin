@@ -1,0 +1,32 @@
+@import '../../styles/variables.sass'
+
+.NewsletterPage_container
+  padding: calc($p_d + 71px) $p_d $p_d $p_d
+
+  .Newsletter_container
+    display: grid
+    grid-gap: 3rem
+
+    .Section
+      display: grid
+      grid-gap: .5rem
+
+      .Newsletter_header
+
+      .Newsletter_background
+        width: auto
+        padding: 12rem 6rem
+        border-radius: 16px
+
+      .Newsletter_description
+        display: grid
+        grid-gap: 1rem
+
+      .Newsletter_end
+        display: flex
+        justify-content: center
+
+@media(min-width: 2000px)
+  .NewsletterPage_container
+    padding: calc(6rem + 71px) 25rem 6rem 25rem
+    min-height: 100vh
