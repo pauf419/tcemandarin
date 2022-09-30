@@ -4,7 +4,6 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import './styles/index.sass'
 import 'swiper/css'
-import 'materialize-css'
 import Store from './store'
 
 export const store = new Store()

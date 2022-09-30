@@ -7,7 +7,7 @@ import Mariya from '../../../img/Mariya.png'
 import Olga from '../../../img/Olga.jpg'
 import Anastasia from '../../../img/Anastasia.png'
 import Slava from '../../../img/gdir.jpg'
-import Evgeniy from '../../../img/Evgeniy.png'
+import Evgeniy from '../../../img/Evgeniy.jpg'
 import Botakoz from '../../../img/Botakoz.jpg'
 import Person from './Person'
 import "swiper/css/navigation"
@@ -25,7 +25,6 @@ export default function SpecialistsSection() {
       {
         picture: Slava,
         name: 'Вячеслав',
-        reg: 'Шанхай',
         block1: '11 лет в Китае.',
         block2: 'Ретейл и маркетинг импортных потребительских товаров в КНР',
         block3: `
@@ -36,12 +35,12 @@ export default function SpecialistsSection() {
         wechat: '+86 13130415633',
         number: '+86 13130415633',
         viber: null,
-        whatsup: '+86 13130415633'
+        whatsup: '+86 13130415633',
+        custom_styles: {}
       },
       {
         picture: Olga,
         name: 'Ольга',
-        reg: 'Шанхай',
         block1: '12 лет в Китае.',
         block2: 'Специалист по средствам защиты растений, удобрениям, деревообработке ',
         block3: `
@@ -50,12 +49,12 @@ export default function SpecialistsSection() {
         quote: null,
         wechat: '+86 18601666421',
         viber: '+86 18601666421',
-        number: '+86 18601666421'
+        number: '+86 18601666421',
+        custom_styles: {}
       },
       {
         picture: Anastasia,
         name: 'Анастасия',
-        reg: 'Шанхай',
         block1: '18 лет в Китае.',
         block2: 'Общее право, магистр права в области охраны окружающей среды.',
         block3: 'Специализация: законы и правила Китая, рынок ухода за пожилыми людьми, межкультурная адаптация продукта, производственное оборудование.',
@@ -64,14 +63,14 @@ export default function SpecialistsSection() {
         telegram: '+86 18616241097',
         whatsup: '+86 18616241097',
         number: '+86 18616241097',
-        viber: null
+        viber: null,
+        custom_styles: {}
       },
     ],
     [
       {
         picture: Mariya,
         name: 'Мария',
-        reg: 'Шанхай',
         block1: '12 лет в Китае.',
         block2: 'Специалист в индустрии Биомедицины, медицинского оборудования, сырья для биокосметики',
         block3: `
@@ -81,13 +80,13 @@ export default function SpecialistsSection() {
         quote: null,
         wechat: '+86 15524567539',
         number: '+86 15524567539',
-        viber: null
+        viber: null,
+        custom_styles: {}
       },
       {
         picture: Evgeniy,
         name: 'Евгений',
-        reg: 'Шанхай',
-        block1: '7+ лет в Китае.',
+        block1: '7 лет в Китае.',
         block2: 'Специалист в языкознании и международных связях. Закупки автомобильных запчастей',
         block3: 'Бакалавр  – Лингвистика ',
         quote: null,
@@ -95,7 +94,18 @@ export default function SpecialistsSection() {
         telegram: '+86 18717806931',
         whatsup: '+86 18717806931',
         number: '+86 18717806931',
-        viber: null
+        viber: null,
+        custom_styles: {backgroundSize: "130%", backgroundPosition: "top center"}
+      },
+      {
+        picture: Botakoz,
+        name: 'Ботакоз',
+        block1: '6 лет в Китае.',
+        block2: 'Международная экономика и торговля.',
+        block3: 'Специализация: маркетинг WeChat, китайские социальные сети, создание контента, офлайн-маркетинг. Анализ рынка, стратегия локализации в F&B, Подбор персонала, интерпретация. Формирование сообщества студентов и молодых специалистов.',
+        quote: null,
+        wechat: '13710743034',
+        custom_styles: {}
       },
     ]
   ]

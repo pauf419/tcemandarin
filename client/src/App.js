@@ -1,9 +1,10 @@
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import { BrowserRouter } from 'react-router-dom'
 import { useRoutes } from './routes'
 import { Context } from './index'
 import { observer } from 'mobx-react-lite'
 import logo from './img/logo.png'
+import Modal from './components/Modal'
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
             </span>
           </div>
       }
+      <Modal modalData={store.modalData} active={store.modalActive}/>
       { routes }
     </BrowserRouter>
   )

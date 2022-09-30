@@ -19,7 +19,6 @@ export default function NewsletterCreate() {
   }
 
   const clickHandler = async () => {
-    if(!form.header | !form.background | !form.description) return window.M.toast({ html: 'Для создания новости все обязательные поля должны быть заполнены!'})
     const response = await store.createNewsletter(form.header, form.description, form.short_description, form.background)
     if(response.success) navigate(`/news/${response.redirId}`)
     setForm({header: '', background: '', short_description: '', description: ''})

@@ -21,7 +21,8 @@ export default function Person({person, defaultActive = false, style = {}}) {
                 {
                   background: `url(${person.picture})`,
                   backgroundSize: 'cover',
-                  ...style
+                  ...style,
+                  ...person.custom_styles 
                 }
               }
           >
@@ -29,7 +30,7 @@ export default function Person({person, defaultActive = false, style = {}}) {
         </div>
         <div className={cl.About}>
         <div className={cl.Details}>
-          <h1 className={cl.Name}> { person.name }, { person.reg } </h1>
+          <h1 className={cl.Name}> { person.name } </h1>
           <div className={cl.Hr}>
           </div>
           <div className={cl.PersonDetails}>
@@ -43,12 +44,6 @@ export default function Person({person, defaultActive = false, style = {}}) {
               <div className={cl.Block3} dangerouslySetInnerHTML={{__html: person.block3}}>
               </div>
               <div className={cl.Block4}>
-                {
-                  person.quote &&
-                  <div className={cl.Quote}>
-                    <span className={cl.Quote_bracket}> " </span> { person.quote } <span className={cl.Quote_bracket}> " </span>
-                  </div>
-                }
                 <div className={cl.Soc_container}>
                   {
                     person.wechat &&

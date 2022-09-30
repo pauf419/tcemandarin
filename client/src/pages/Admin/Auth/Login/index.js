@@ -12,12 +12,8 @@ export default function AdminAuthLogin() {
     const { store } = useContext(Context)
 
     const clickHandler = async () => {
-      if(!email | !password) return window.M.toast({ html: 'Все поля должны быть заполненными!' })
-      try {
-        await store.login(email, password)
-      } catch (e) {
-
-      } finally {
+      const response = await store.login(email, password)
+      if(!response.failed) {
         setEmail('')
         setPassword('')
       }

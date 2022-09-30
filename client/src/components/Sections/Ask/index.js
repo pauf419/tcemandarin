@@ -19,9 +19,8 @@ export default function Ask() {
   const changeHandler = e => setForm({ ...form, [e.target.name]: e.target.value })
 
   const clickHandler = async () => {
-    await store.send(form.name, form.number, form.email, form.description)
-
-    setForm({
+    const response = await store.send(form.name, form.number, form.email, form.description)
+    if(!response.failed) setForm({
       name: '',
       number: '',
       email: '',
@@ -67,7 +66,7 @@ export default function Ask() {
               onChange={changeHandler}
             />
             <div className={cl.Btn_container}>
-              <Btn onClick={() => clickHandler()} variant='rounded'> Отправить заявку </Btn>
+              <Btn onClick={() => clickHandler()}> Отправить заявку </Btn>
             </div>
           </div>
         </div>

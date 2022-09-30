@@ -19,7 +19,10 @@ $api.interceptors.request.use((config) => {
 $api.interceptors.response.use((config) => {
     return config
 },async (error) => {
-    window.M.toast({ html: error.response.data.message })
+  store.setModalActive(true)
+  store.setModalData({
+    message: error.response.data.message
+  })
     const originalRequest = error.config
     if (error.response.status == 401 && error.config && !error.config._isRetry) {
         originalRequest._isRetry = true
