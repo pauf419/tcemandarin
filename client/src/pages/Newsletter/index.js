@@ -1,11 +1,14 @@
 import {useParams} from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useContext } from 'react'
 import cl from './index.module.sass'
 import NewsService from '../../services/NewsService'
 import Btn from '../../components/UI/Btn'
 import { useNavigate } from 'react-router-dom'
+import {Context} from '../../index'
 
 export default function NewsletterPage() {
+
+  const {store} = useContext(Context)
 
   const navigate = useNavigate()
 
@@ -14,8 +17,9 @@ export default function NewsletterPage() {
   const {id} = useParams()
 
   const fetchNewsletter = async() => {
-    let newsletter = await NewsService.getById(id)
-    setNewsletter(newsletter.data.newsletter)
+    let newsletter = await store.getNewsletterById(id)
+    if(newsletter.failed) return navigate('/')
+    setNewsletter(newsletter.newsletter)
   }
 
   useEffect(() => {
@@ -26,7 +30,7 @@ export default function NewsletterPage() {
     <div className={cl.NewsletterPage_container}>
       {
         newsletter
-          ?
+          &&
           <div className={cl.Newsletter_container}>
             <div className={cl.Section}>
               <div className={cl.Newsletter_header}>
@@ -57,8 +61,6 @@ export default function NewsletterPage() {
               </div>
             </div>
           </div>
-          :
-          <h1> Loading </h1>
       }
     </div>
   )

@@ -46,7 +46,8 @@ class SmtpService {
     }
 
     if(process.env.NODE_ENV === 'prod') {
-      await this.transporter.sendMail({
+      try {
+        await this.transporter.sendMail({
         from: process.env.SMTP_USER,
         to: 'lebedevpavel0511@gmail.com',
         subject: `Заявка на обсуждение проекта на ресурсе TCE MANDARIN.`,
@@ -83,7 +84,10 @@ class SmtpService {
               </div>
             </div>
           `
-      })
+        })
+      } catch(e) {
+        console.log(e)
+      }
     }
 
     await Order.create({

@@ -19,6 +19,22 @@
       width: 54px
       height: 54px
 
+    .Reload_container 
+      display: grid
+      margin: 3rem 0
+
+      button
+        background: transparent 
+        border: none
+
+        svg 
+          width: 20px
+          cursor: pointer
+          fill: rgba(73, 76, 80, 0.7)
+          transition: .2s all ease
+          &:hover
+            fill: #fff
+
   .OrderType_select
     padding-bottom: $p_d
     display: flex
@@ -97,6 +113,20 @@
 
           .Options
             display: grid
+
+@keyframes reload_ext
+  from 
+    transform: rotate(359deg)
+  to 
+    transform: rotate(0deg)
+
+@keyframes reload_rotate
+
+  from 
+    transform: rotate(0deg)
+  to 
+    transform: rotate(359deg)
+
 
 @media(min-width: 2000px)
   .OrdersPage_container

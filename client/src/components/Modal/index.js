@@ -10,7 +10,7 @@ export default function Modal({modalData, active}) {
   useEffect(() => {
     if(active === true) setTimeout(() => {
       store.setModalActive(false)
-    }, 1500000)
+    }, 15000)
   }, [active])
 
   return (

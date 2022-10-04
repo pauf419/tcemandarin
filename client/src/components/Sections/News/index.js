@@ -14,18 +14,6 @@ export default function News() {
     $('html, body').animate({ scrollTop: $(href).offset().top  }, 550)
   }
 
-  const news = [
-    [
-      {
-        header: '8 документов, которые необходимо получить до подписания контракта с китайским поставщиком',
-        description: 'Сохраните, если планируете работать с китайскими поставщиками',
-        id: '9',
-        background: 'url(https://cdn.mos.cms.futurecdn.net/tRguxDfjP2dubK5nuRk4Hk.jpg)',
-        date: '2022.09.01'
-      },
-    ]
-  ]
-
   const [innerWidth, setInnerWidth] = useState(window.innerWidth)
   const [innerHeight, setInnerHeight] = useState(window.innerHeight)
   const [page, setPage] = useState(0)

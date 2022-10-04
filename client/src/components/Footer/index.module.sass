@@ -4,7 +4,7 @@
   background: #000
   padding: 1.5rem
   display: grid
-  grid-gap: .5rem
+  grid-gap: 1.5rem
 
   .Footer_inner
     display: flex
@@ -46,6 +46,17 @@
     align-items: center
     justify-content: space-around
     font-size: 11px
+
+    .Dev
+      a  
+        transition: .2s all ease 
+        color: #fff
+
+        &:hover
+          font-weight: 900
+          background: -webkit-linear-gradient(38deg, rgba(208,26,106,1) 0%, rgba(115,25,159,1) 100%)
+          -webkit-background-clip: text
+          -webkit-text-fill-color: transparent
 
     .PrivacyPolicy
       a

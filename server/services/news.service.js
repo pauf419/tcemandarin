@@ -69,9 +69,9 @@ class NewsService {
       const newsletter = await Newsletter.findById(id)
       if(!newsletter) return {notFound: true, newsletter}
       const newsletterDto = new NewsletterDto(newsletter)
-      return {notFound: true, newsletter: newsletterDto}
+      return {notFound: false, newsletter: newsletterDto}
     } catch(e) {
-      console.log(e)
+      return {notFound: true}
     }
   }
 }

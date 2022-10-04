@@ -95,6 +95,30 @@ export default class Store {
     }
   }
 
+  async getNewsletterById(id) {
+    this.setLoading(true)
+    try {
+      const response = await NewsService.getById(id)
+      if(response.data.notFound) {
+        this.setModalActive(true)
+        this.setModalData({
+          message: 'Произошла непредвиденная ошибка. Попробуйте позже.'
+        })
+        return { failed: true }
+      }
+      return { failed: false, newsletter: response.data.newsletter }
+    } catch (e) {
+      this.setModalActive(true)
+      this.setModalData({
+        message: 'Произошла непредвиденная ошибка. Попробуйте позже.'
+      })
+      this.setLoading(false)
+      return { failed: true }
+    } finally {
+      this.setLoading(false)
+    }
+  }
+
   async getOrders() {
     this.setLoading(true)
     try {

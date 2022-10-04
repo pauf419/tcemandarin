@@ -12,7 +12,7 @@ export default function Person({person, defaultActive = false, style = {}}) {
   }, [defaultActive])
 
   return (
-    <div className={cl.Person}>
+    <div className={cl.Person} style={person.custom_styles}>
       <span>
         <div className={cl.Picture_inner}>
           <div
@@ -22,7 +22,7 @@ export default function Person({person, defaultActive = false, style = {}}) {
                   background: `url(${person.picture})`,
                   backgroundSize: 'cover',
                   ...style,
-                  ...person.custom_styles 
+                  ...person.pic_custom_styles 
                 }
               }
           >
