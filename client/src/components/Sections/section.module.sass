@@ -45,49 +45,14 @@ section
           display: flex
           gap: 1rem
 
+          &.DeleteMode
+            display: grid
+            gap: 2rem
+
         .Controlls
           display: flex
           justify-content: center
           padding: 2rem
-
-    .Newletter_container
-      cursor: pointer
-      position: relative
-      width: 100%
-      display: grid
-      align-items: end
-      border-radius: 16px
-      padding: 1rem
-
-      .Newletter_content
-        display: grid
-        grid-gap: 1rem
-
-      &:hover
-        .Newletter_infoheader
-          transform: scale(1.1)
-
-        .Newletter_blurer
-          backdrop-filter: blur(4px)
-
-      .Newletter_infoheader
-        transition: .2s all ease
-        position: absolute
-        top: 0
-        right: 0
-        padding: 1rem
-        font-size: 10px
-
-      .Newletter_blurer
-        position: absolute
-        background: rgba(0,0,0, .6)
-        width: 100%
-        height: 100%
-        border-radius: 14px
-        transition: .2s all ease
-
-      .Newletter_header
-        font-size: 22px
 
   &.WhyUs
     background: #000
@@ -214,7 +179,7 @@ section
           font-size: 30px
 
     .Content
-      display: grid 
+      display: grid
       align-content: center
       justify-items: flex-start
       grid-gap: 1rem

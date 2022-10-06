@@ -67,6 +67,39 @@ export default class Store {
     }
   }
 
+  async delete(id) {
+    if(!id) {
+      this.setModalActive(true)
+      this.setModalData({
+        message: 'Для удаления новости все поля должны быть заполнеными.'
+      })
+      return {failed: true}
+    }
+    this.setLoading(true)
+    try {
+      const response = await NewsService.delete(id)
+      if(response.data.success) {
+        this.setModalActive(true)
+        this.setModalData({
+          message: 'Новость успешно удалена'
+        })
+      } else {
+        this.setModalActive(true)
+        this.setModalData({
+          message: 'Новость с таким идентификатором не найдена'
+        })
+      }
+    } catch(e) {
+      this.setModalActive(true)
+      this.setModalData({
+        message: e.message
+      })
+      this.setLoading(false)
+    } finally {
+      this.setLoading(false)
+    }
+  }
+
   async createNewsletter(header, description, short_description, background) {
     if(!header | !description | !background) {
       this.setModalActive(true)

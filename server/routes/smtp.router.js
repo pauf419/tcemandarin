@@ -9,3 +9,4 @@ router.get('/get', authMiddleware, smtpController.get)
 router.post('/change-status', authMiddleware, smtpController.changeStatus)
 
 module.exports = router
+ 

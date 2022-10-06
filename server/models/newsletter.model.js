@@ -6,7 +6,6 @@ const NewsletterSchema = new Schema({
   short_description: {type: String, default: null, required: false},
   description: {type: String, required: true},
   background: {type: String, default: null},
-  date: {type: String, default: null},
   index: {type: Number}
 })
 

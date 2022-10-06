@@ -30,6 +30,15 @@ class NewsService {
     return newsletterDto
   }
 
+  async delete(id) {
+    try {
+      const newsletter = await Newsletter.deleteOne({ _id: id })
+      return { success: true }
+    } catch(e) {
+      return { success: false }
+    }
+  }
+
   async get(page, limit, args) {
     var skip = page * limit
     const allNewsletters = await Newsletter.find()
@@ -40,7 +49,7 @@ class NewsService {
 
       return newsletterDto
     })]
- 
+
     if(newslettersFromDb.length <= 0) return {canLoad: false, x_page_count: allNewsletters.length}
 
     const segmented = this.segmentNewsletter(newsletters)

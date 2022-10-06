@@ -15,6 +15,18 @@ class NewsController {
     }
   }
 
+  async delete(req, res, next) {
+    try {
+      const { id } = req.body
+
+      const response = await newsService.delete(id)
+
+      return res.json(response)
+    } catch(e) {
+      next(e)
+    }
+  }
+
   async get(req, res, next) {
     const {page, limit, args} = req.query
     const newsletters = await newsService.get(page, limit, args)

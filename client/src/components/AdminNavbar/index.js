@@ -42,6 +42,9 @@ export default function Navbar() {
                   <Link to='/admin/newsletter/create' onClick={() => setOpened(false)}>
                     Новая новость
                   </Link >
+                  <Link to='/admin/newsletter/action' onClick={() => setOpened(false)}>
+                    Удалить новость
+                  </Link >
                   <Link to='/admin/order/view' onClick={() => setOpened(false)}>
                     Просмотр заявок
                   </Link >

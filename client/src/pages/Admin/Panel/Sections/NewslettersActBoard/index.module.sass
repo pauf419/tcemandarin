@@ -1,0 +1,74 @@
+@import '../../../../../styles/variables.sass'
+
+.NewslettersActBoard_container
+
+  .Select_container
+    height: calc(100vh - 71px)
+    margin-top: 71px
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    display: grid
+    grid-template-columns: auto auto
+
+    .Select
+      display: grid
+      align-items: center
+      justify-content: center
+
+      .Select_content
+        transition: .2s all ease
+        border: 2px solid rgba(73, 76, 80, 0.4)
+        border-radius: 16px
+        color: rgba(73, 76, 80, 0.4)
+        font-weight: 600
+        padding: 1rem
+        cursor: pointer
+        display: grid
+        justify-items: center
+
+        .Select_icon
+          transition: .2s all ease
+          fill: rgba(73, 76, 80, 0.4)
+          width: 100px
+          height: 100px
+
+        &:hover
+          color: $fg-3
+          border-color: $fg-3
+
+          .Select_icon
+            fill: $fg-3
+
+.DeleteById_container
+  height: calc(100vh - 71px)
+  margin-top: 71px
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  display: grid
+  justify-content: center
+  align-items: center
+  padding: 0 3rem
+
+
+  .Content
+    min-width: 250px
+    display: grid
+    grid-gap: 1.5rem
+
+.SelectNewsletter_container
+  padding: 3rem
+
+  .Header
+    padding: 0 0 2rem 0
+
+@media(max-width: 900px)
+  .NewslettersActBoard_container
+    .Select_container
+      display: grid
+      grid-template-columns: auto
