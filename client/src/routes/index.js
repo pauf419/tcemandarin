@@ -6,7 +6,6 @@ export function useRoutes() {
   return (
     <Routes>
       <Route path="/*" element={<Main/>} exact/>
-      <Route path="/admin/*" element={<AdminPage/>}/>
       <Route path="*" element={<Navigate to="/"/>}/>
     </Routes>
   )

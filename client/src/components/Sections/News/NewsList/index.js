@@ -6,6 +6,9 @@ import { usePagination } from '../../../../hooks/usePagination'
 import NewsService from '../../../../services/NewsService'
 import { useNavigate } from 'react-router-dom'
 import Newsletter from './Newsletter'
+import news_1 from '../../../../img/news_1.jpg'
+import news_2 from '../../../../img/news_2.jpg'
+import news_3 from "../../../../img/news_3.jpg"
 
 export default function NewsList({mode = 'default', customOnClick}) {
 
@@ -13,7 +16,36 @@ export default function NewsList({mode = 'default', customOnClick}) {
   const [innerHeight, setInnerHeight] = useState(window.innerHeight)
   const [page, setPage] = useState(0)
   const [pageLimit, setPageLimit] = useState(999)
-  const [newsletters, setNewsletters] = useState([])
+  const [newsletters, setNewsletters] = useState([
+    [
+      {
+        id: 1,
+        header: "Как купить в Китае с завода без рисков для бизнеса",
+        short_description: "Рассказываем, как купить товар в Китае оптом и избежать ошибок",
+        description:"Китай является одним из самых крупных производителей в мире. По данным ООН, на него приходится 28,4% мирового промышленного производства. В Китае даже существует такое явление, как города-фабрики, которые специализируются на изготовлении определенного вида продукции. \r\n\r\nРассказываем, как купить товары оптом с завода-изготовителя в Китае.\r\n\r\n<h1> Можно ли сделать заказ в Китае без помощи посредников </h1>\r\n\r\nДистанционное приобретение нужного товара — наиболее распространенный вариант для покупателей, которые хотят обойтись без посредников и без лишних затрат. Для самостоятельной покупки китайских товаров оптом и в розницу существует несколько специализированных сайтов, самые распространенные из них  — Alibaba, Aliexpress, TaoBao, 1688.\r\n\r\nДва первых сайта адаптированы для международной торговли, поэтому с ними проще работать самому, вести диалог с продавцом, отбирать из множества вариантов понравившиеся позиции, просматривать отзывы и фотографии. Часто сайт Alibaba используется для поиска поставщика и реального изготовителя. Здесь очень просто завязать диалог и найти нужные вам связи. Нужно помнить, что международным языком является английский. Интернет-площадка предоставляет возможность отбора нескольких продавцов по важным параметрам для дальнейшего тесного сотрудничества. \r\n\r\nПоследние же созданы для внутренних нужд страны, поэтому вашим преимуществом будет знание китайского языка и способность разбираться с вопросами, связанных с поставками в другую страну. Конечно, во всех вариантах, существуют трудности и нюансы, которые проще и легче решить через посредника, но разобравшись, всю работу по покупке и доставке можно сделать самому.",
+        background: news_1,
+        date:"2022-09-26",
+      },
+      {
+        id: 2,
+        header:"Как начать бизнес с Китаем: 5 юридических форм для ведения предпринимательской деятельности",
+        short_description:"Рассказываем о 5 формах иностранных инвестиций, которые можно использовать для выхода на рынок Китая в 2022 году",
+        description:"Китай занимает лидирующие позиции в доле иностранных инвестиций и предлагает выгодные возможности для компаний, которые хотят расширить деловое присутствие на китайский рынок. К тому же после вступления в силу «Закона об иностранных инвестициях» в 2020 году для инвесторов появились новые формы и упростилась нормативная база.\r\n\r\n<h4> Гарантии для предприятий с иностранным участием: </h4>\r\n\r\n<ul>\r\n<li>конкурентный доступ к государственным закупкам </li>\r\n<li>возможность привлечь финансирование путем размещения акций и выпуска корпоративных облигаций на китайском рынке </li> \r\n<li>запрет принудительной передачи технологий, защита коммерческой тайны и т. д. </li>\r\n</ul>\r\n\r\nРассказываем о 5 юридических формах, которые можно использовать для выхода на рынок Китая в 2022 году.\r\n\r\n<h1> Представительство </h1> \r\n\r\nПредставительство — самый простой тип структуры для иностранных инвесторов. Представительство не может самостоятельно нести гражданско-правовую ответственность, а является филиалом иностранной компании и подписывает контракты от его лица.\r\n\r\nЭто лучший способ познакомиться с китайским рынком и хорошее решение для компаний, которые регулярно что-то закупают в Китае. Представитель находится на местах для контроля качества и поддерживает связь с китайскими поставщиками, агентами и дистрибьюторами.\r\n\r\nПредставительствам нельзя заниматься деятельностью для получения прибыли. Если они действуют за пределами разрешенной деятельности, они будут оштрафованы, а незаконные доходы конфискуют. ",
+        background: news_2,
+        date:"2022-09-26"
+      }, 
+    ],
+    [
+      {
+        id: 3,
+        header:"Обзор электронных торговых площадок Китая",
+        short_description:"Рассказываем, как купить на Taobao, Tmall, Kaola, VIP и JD.",
+        description:"В Китае несколько самых крупных электронных торговых площадок, ориентированных на внутренний и международный рынок:\r\n\r\n \r\n<h1> ALIBABA </h1>\r\nШирокая специализация, представлены все группы товаров: техника, ювелирные изделия, одежда, косметика, продукты питания и тд. Площадка агрегатирует предложения крупных поставщиков и предоставляет покупателю возможность связываться с ними лично. Ориентирована исключительно на бизнес, розничной продажи нет. Много способов оплаты, в том числе Alipay wallet (платежная система компании Alibaba).\r\n\r\n \r\n\r\n<h1> TAOBAO </h1>\r\nКрупнейшая коммерческая торговая площадка, популярная во всем мире. Представлены все группы товаров, есть предложения для крупных оптовиков, продажа мелким оптом, в розницу. Нет русскоязычной версии сайта и прямой доставки в Россию, поэтому заказы можно делать только через посредника. Принимает только эмитированные китайскими банками карты, также можно оплатить покупки через электронную платежную систему.\r\n\r\n \r\n\r\n<h1> TMALL </h1>\r\nДочерний филиал TAOBAO, расположенный на той же торговой платформе. Очень много товаров, представлены не только китайские, но и известные европейские и американские бренды (GAP, NB, ZARA, ADIDAS, MANGOи др.). Есть поиск по товарам и маркам. Не принимает российские банковские карты, как и TAOBAO, валюта – исключительно юань, купить товар можно только через посредника или, к примеру, найти понравившуюся вещь на Ebay и купить на аукционе у того же продавца.\r\n\r\n \r\n\r\n<h1> ALIEXPRESS </h1>\r\nПлощадка с большим количеством товаров и русскоязычным переводом. Цены несколько выше, чем, к примеру, на TAOBAO, но очень много мелкооптовых и розничных предложений, есть прямая доставка во все страны мира, в том числе в Россию. Оплатить товар можно с электронного кошелька или банковской картой.\r\n\r\n \r\n\r\nСравнение торговых площадок КНР и российских интернет-магазинов\r\n\r\n \r\n\r\nНа рынке России сейчас присутствует довольно много европейских и американских брендов, но цены у представителей все равно остаются выше, чем в китайских магазинах. Поэтому владельцы различных торговых точек предпочитают заказывать товары напрямую из КНР или через посредников, участвовать в совместных покупках. К примеру, на TAOBAO можно купить брюки за 18-20 юаней (ок. 180-200 руб.), блузку за 15 юаней (ок. 150 руб.) или куртку за 35 юаней (ок. 350 руб). Также здесь выгодно покупать товары для автосервисов, автомобильных тюнинг-ателье, магазинов товаров для ремонта и строительства и так далее.\r\n \r\n\r\n<h1> Доставка товаров из Китая </h1>\r\n\r\n \r\n\r\nВ Китае очень много посредников, предоставляющих услуги по покупке товаров с электронных торговых площадок, у которых нет прямой доставки в Россию. У них есть русскоговорящие сотрудники, которые принимают заказ у покупателя и получают товар из магазина. Пользоваться такими предложениями могут владельцы российских магазинов, частные предприниматели и организаторы совместных покупок.\r\n\r\nРаботать в сфере международного бизнеса стало еще проще! Можно заказывать доставку грузов в Китай или импорт из Азии!",
+        background: news_3,
+        date:"2022-09-26",
+      }
+    ]
+  ])
   const [normalizedNews, setNormalizedNews] = useState([])
   const [isLoading, setIsLoading] = useState(false)
 
@@ -26,26 +58,6 @@ export default function NewsList({mode = 'default', customOnClick}) {
     })
   }, [])
 
-  usePagination(page, async () => {
-    if(page < 0 | page > pageLimit / 6) return
-    setIsLoading(true)
-    try {
-      const fetched = await NewsService.get(page, 6, 'default')
-      setPageLimit(fetched.data.x_page_count)
-      setNewsletters([...fetched.data.segmented])
-      fetched.data.newsletters.map(newsletter => {
-        if(normalizedNews.includes(newsletter) == false) {
-          setNormalizedNews([...normalizedNews, ...fetched.data.newsletters])
-        }
-      })
-    } catch(e) {
-      console.log('Planned error: ' + e)
-      setIsLoading(false)
-    } finally {
-      setIsLoading(false)
-    }
-  })
-
 
   return (
     <div className={cl.News_content}>
@@ -53,73 +65,42 @@ export default function NewsList({mode = 'default', customOnClick}) {
         innerWidth >= 900
           ?
           <div className={cl.News_inner}>
-            {
-              newsletters.map((section, index) => {
-
-                  const section_seg = []
-                  const section_seg_1 = []
-                  const section_seg_2 = []
-                  section.map((e,i) => {
-                    if(i < section.length/2) {
-                      return section_seg_1.push(e)
-                    }
-                    return section_seg_2.push(e)
-                  })
-
-                  section_seg.push(section_seg_1)
-                  section_seg.push(section_seg_2)
-
-                  return (
-                    <div key={index} className={`${isLoading && 'active'} News_container`} style={{minHeight: innerHeight}}>
-                      {
-                        isLoading
-                        ?
-                        <div className="lds-dual-ring"></div>
-                        :
-                        section_seg.map((seg, i) =>
-                          <div className={`${cl.Newletter_list} ${mode == 'delete' ? cl.DeleteMode : ""}`} key={i}>
-                            {
-                              seg.map((newsletter) =>
-                                <Newsletter
-                                  newsletter={newsletter}
-                                  onClick={mode == 'delete' ? customOnClick() : () => navigate(`/news/${newsletter._id}`)} 
-                                  key={newsletter._id}
-                                  mode={mode}
-                                />
-                              )
-                            }
-                          </div>
-                        )
-                      }
-                    </div>
+            <div className={`${isLoading && 'active'} News_container`} style={{minHeight: innerHeight}}>
+              <div className={`${cl.Newletter_list} ${mode == 'delete' ? cl.DeleteMode : ""}`}>
+                {
+                  newsletters[0].map((newsletter) =>
+                    <Newsletter
+                      newsletter={newsletter}
+                      onClick={mode == 'delete' ? customOnClick() : () => navigate(`/news/${newsletter.id}`)} 
+                      key={newsletter.id}
+                      mode={mode}
+                    />
                   )
                 }
-              )
-            }
-            <div className={cl.Controlls}>
-              {
-                page > 0 &&
-                <div className='arrow left' onClick={() => setPage(page - 1)}> </div>
-              }
-              {
-                page < (parseInt(pageLimit) / 6) - 1 &&
-                <div className='arrow right' onClick={() => setPage(page + 1)}> </div>
-              }
+              </div>
+              <div className={`${cl.Newletter_list} ${mode == 'delete' ? cl.DeleteMode : ""}`}>
+                {
+                  newsletters[1].map((newsletter) =>
+                    <Newsletter
+                      newsletter={newsletter}
+                      onClick={mode == 'delete' ? customOnClick() : () => navigate(`/news/${newsletter.id}`)} 
+                      key={newsletter.id}
+                      mode={mode}
+                    />
+                  )
+                }
+              </div>
             </div>
           </div>
           :
           <div className="News_container" style={{minHeight: innerHeight}}>
             <div className={`${cl.Newletter_list} ${mode == 'delete' ? cl.DeleteMode : ""}`}>
               {
-                normalizedNews.map((newsletter, index) =>
-                  <Newsletter newsletter={newsletter}  onClick={() => navigate(`/news/${newsletter._id}`)} key={newsletter._id} mode={mode}/>
+                newsletters.map((seq, index) =>
+                  seq.map((newsletter) => <Newsletter newsletter={newsletter}  onClick={() => navigate(`/news/${newsletter.id}`)} key={newsletter.id} mode={mode}/>)
                 )
               }
             </div>
-            {
-              page < (parseInt(pageLimit) / 6) - 1 &&
-              <Btn onClick={() => setPage(page + 1)}> Показать еще </Btn>
-            }
           </div>
         }
       </div>

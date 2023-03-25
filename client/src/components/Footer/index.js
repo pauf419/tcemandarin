@@ -46,7 +46,7 @@ export default function Footer() {
           <span>
             Создано, и поддерживается коммандой
           </span>
-          <a href="https://github.com/Galoid"> GALOID </a>
+          <a href="https://github.com/AmberTeam"> AmberTeam </a>
         </span>
         <span className={cl.PrivacyPolicy}>
           <a href='#'> Политика конфиденциальности </a>
